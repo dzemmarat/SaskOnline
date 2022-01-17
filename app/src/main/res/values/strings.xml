@@ -1,3 +1,12 @@
 <resources>
+    <!-- General -->
     <string name="app_name">SaskOnline</string>
+
+    <!-- Navigation -->
+    <string name="title_home">Новости</string>
+    <string name="title_notes">Заметки</string>
+    <string name="title_messages">Сообщения</string>
+    <string name="title_news">Информация</string>
+    <string name="title_settings">Настройки</string>
+
 </resources>
