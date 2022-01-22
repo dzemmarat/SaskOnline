@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core -->
+    <dimen name="margin_header_top">32dp</dimen>
+    <dimen name="margin_horizontal">20dp</dimen>
+
+    <!-- Home Fragment -->
+    <dimen name="margin_tabs_top">28dp</dimen>
+    <dimen name="margin_content_tabs">20dp</dimen>
+</resources>
