@@ -9,4 +9,14 @@
     <string name="title_news">Информация</string>
     <string name="title_settings">Настройки</string>
 
+    <!-- Home Fragment -->
+    <string name="hello_user">
+        Привет, \n%s 🖖
+    </string>
+
+    <!-- Tab bar items -->
+    <string name="tab_schedule">Расписание</string>
+    <string name="tab_homework">Задания</string>
+    <string name="tab_weather">Погода</string>
+
 </resources>
