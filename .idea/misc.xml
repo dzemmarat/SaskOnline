@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SaskOnline/app/src/main/res/drawable/ic_home.xml" value="0.24572368421052632" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/activity_main.xml" value="0.2298611111111111" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_home.xml" value="0.2444078947368421" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_messages.xml" value="0.2355263157894737" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_news.xml" value="0.2355263157894737" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_notes.xml" value="0.2355263157894737" />
-        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_settings.xml" value="0.2355263157894737" />
-        <entry key="..\:/SaskOnline/app/src/main/res/menu/menu_bottom.xml" value="0.23322475570032572" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_tab_item.xml" value="0.2546052631578947" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_tab_item_selected.xml" value="0.1394736842105263" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_tab_item_unselected.xml" value="0.1394736842105263" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/ic_home.xml" value="0.2546052631578947" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/selector_bg_tab_item.xml" value="0.24572368421052632" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/activity_main.xml" value="0.2444078947368421" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_home.xml" value="0.16" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_schedule.xml" value="0.2444078947368421" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_weather.xml" value="0.2355263157894737" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/homework_fragment.xml" value="0.2444078947368421" />
+        <entry key="..\:/SaskOnline/app/src/main/res/menu/menu_bottom.xml" value="0.2355263157894737" />
       </map>
     </option>
   </component>
