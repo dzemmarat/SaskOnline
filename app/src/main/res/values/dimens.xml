@@ -7,4 +7,18 @@
     <!-- Home Fragment -->
     <dimen name="margin_tabs_top">28dp</dimen>
     <dimen name="margin_content_tabs">20dp</dimen>
+
+    <!-- Timetable Fragment -->
+    <dimen name="padding_container_important_top">14dp</dimen>
+    <dimen name="padding_container_important_bottom">23dp</dimen>
+    <dimen name="padding_container_important_horizontal">16dp</dimen>
+
+    <dimen name="margin_timetable_top">24dp</dimen>
+    <dimen name="margin_timetable_recycler_top">15dp</dimen>
+    <dimen name="margin_item_title_start">16dp</dimen>
+    <dimen name="margin_item_lesson_image">16dp</dimen>
+
+    <!-- Homework Fragment -->
+    <dimen name="margin_item_homework_image_start">21dp</dimen>
+    <dimen name="margin_item_homework_image">18dp</dimen>
 </resources>

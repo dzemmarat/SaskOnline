@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp">
+
+    <FrameLayout
+        android:id="@+id/containerIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_icon_timetable_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/margin_item_lesson_image"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/item_timetable_icon_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_history" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_item_title_start"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="@dimen/margin_item_title_start"
+        android:ellipsize="end"
+        android:maxEms="3"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/tvLessonTime"
+        app:layout_constraintStart_toEndOf="@+id/containerIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="История живописи" />
+
+    <TextView
+        android:id="@+id/tvLessonType"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="?attr/colorPrimaryVariant"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="Практика" />
+
+    <TextView
+        android:id="@+id/tvLessonTime"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="10:00 - 11:35" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="28dp"
+        android:background="?attr/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvLessonTime"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLessonDescription"
+        style="@style/Text.Blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxEms="3"
+        app:layout_constraintEnd_toStartOf="@id/ivDeploy"
+        app:layout_constraintStart_toStartOf="@+id/tvLessonType"
+        app:layout_constraintTop_toBottomOf="@+id/tvLessonType"
+        tools:text="Написать конспект по направлениям в искусстве 19 века" />
+
+    <ImageView
+        android:id="@+id/ivDeploy"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLessonDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvLessonDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
