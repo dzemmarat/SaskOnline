@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.FragmentHomeBinding
-import com.mrz.saskonline.ui.adapter.FragmentAdapter
+import com.mrz.saskonline.ui.home.adapter.FragmentAdapter
 import com.mrz.saskonline.ui.core.BaseFragment
 import com.mrz.saskonline.viewmodel.home.HomeViewModel
 
@@ -39,10 +39,6 @@ class HomeFragment :
         with(binding) {
             val adapter = FragmentAdapter(parentFragmentManager, lifecycle)
             pager.adapter = adapter
-
-            tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tab_homework)))
-            tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tab_schedule)))
-            tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tab_weather)))
 
             tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
