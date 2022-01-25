@@ -8,6 +8,15 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="Text.Gray">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Text.Blue">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
     <style name="Text.Header">
         <item name="android:textSize">28sp</item>
         <item name="android:layout_width">0dp</item>

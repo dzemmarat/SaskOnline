@@ -15,8 +15,11 @@
     </string>
 
     <!-- Tab bar items -->
-    <string name="tab_schedule">Расписание</string>
+    <string name="tab_timetable">Расписание</string>
     <string name="tab_homework">Задания</string>
     <string name="tab_weather">Погода</string>
+
+    <!-- Schedule Fragment -->
+    <string name="item_timetable_icon_description">Icon for lesson</string>
 
 </resources>
