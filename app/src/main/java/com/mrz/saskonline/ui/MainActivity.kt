@@ -3,7 +3,7 @@ package com.mrz.saskonline.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.ActivityMainBinding
@@ -26,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         // Инициализация NavHostFragment
-        navController = findNavController(R.id.fragmentContainerView)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
+        if (navHostFragment != null) {
+            navController = navHostFragment.findNavController()
+        }
+
         binding.bottomNavigationView.setupWithNavController(navController)
 
         // Отключаем обновление фрагмента при выборе той же вкладки

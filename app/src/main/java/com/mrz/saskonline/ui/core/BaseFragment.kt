@@ -13,17 +13,8 @@ import com.mrz.saskonline.ui.MainActivity
 import com.mrz.saskonline.viewmodel.core.BaseViewModel
 import javax.inject.Inject
 
-abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>(
-    @LayoutRes
-    layout: Int
-) : Fragment(layout), HasDefaultViewModelProviderFactory {
-
-    // Инжектим вью модель
-    @Inject
-    lateinit var defaultViewModelFactory: dagger.Lazy<SavedStateViewModelFactory>
-
-    // Возможность использования BaseFragment без лейаута
-    constructor() : this(0)
+abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>
+    : Fragment() {
 
     // Переменная для вью модели
     protected abstract val viewModel: T
