@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="SaskOnline" parent="Theme.Design.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/darkest_blue</item>
-        <item name="colorPrimaryVariant">@color/dark_blue</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryVariant">@color/gray</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/light_blue</item>
-        <item name="colorSecondaryVariant">@color/lightest_blue</item>
-        <item name="colorOnSecondary">@color/dark_blue</item>
+        <item name="colorSecondaryVariant">@color/crayola</item>
+        <item name="colorOnSecondary">@color/gray</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->

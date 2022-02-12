@@ -71,7 +71,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:background="@color/darkest_blue"
+        android:background="@color/dark_blue"
         app:itemIconTint="@color/selector_bottom_nav"
         app:itemTextColor="@color/selector_bottom_nav"
         app:labelVisibilityMode="unlabeled"
@@ -79,6 +79,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_bottom" />
-
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
