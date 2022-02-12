@@ -9,14 +9,24 @@ import com.mrz.saskonline.ui.home.homework.HomeworkFragment
 import com.mrz.saskonline.ui.home.weather.WeatherFragment
 
 class FragmentAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
+    private val fragmentList : MutableList<Fragment> =ArrayList()
+    private val titleList : MutableList<String> =ArrayList()
 
-    override fun getItemCount() = 3
+    override fun getItemCount(): Int {
+        return fragmentList.size
+    }
 
     override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            1 -> HomeworkFragment()
-            2 -> WeatherFragment()
-            else -> TimetableFragment()
-        }
+        return  fragmentList[position]
+    }
+
+
+    fun addFragment(fragment: Fragment, title: String){
+        fragmentList.add(fragment)
+        titleList.add(title)
+    }
+
+    fun getPageTitle(position: Int): CharSequence? {
+        return titleList[position]
     }
 }

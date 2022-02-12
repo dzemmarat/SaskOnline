@@ -43,30 +43,14 @@
             app:tabSelectedTextColor="@color/white"
             app:tabTextAppearance="@style/Text.TabLayout"
             app:tabTextColor="@color/gray"
-            tools:ignore="SpeakableTextPresentCheck">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_timetable" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_homework" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_weather" />
-
-        </com.google.android.material.tabs.TabLayout>
+            tools:ignore="SpeakableTextPresentCheck"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_content_tabs"
+            android:saveEnabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

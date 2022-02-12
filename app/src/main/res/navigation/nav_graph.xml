@@ -30,4 +30,19 @@
         android:name="com.mrz.saskonline.ui.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.mrz.saskonline.ui.home.timetable.TimetableFragment"
+        android:label="TimetableFragment"
+        tools:layout="@layout/fragment_timetable"/>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.mrz.saskonline.ui.home.weather.WeatherFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather"/>
+    <fragment
+        android:id="@+id/homeworkFragment"
+        android:name="com.mrz.saskonline.ui.home.homework.HomeworkFragment"
+        android:label="HomeworkFragment"
+        tools:layout="@layout/fragment_homework"/>
 </navigation>

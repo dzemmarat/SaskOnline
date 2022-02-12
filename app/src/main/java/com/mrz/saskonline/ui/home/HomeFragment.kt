@@ -3,13 +3,14 @@ package com.mrz.saskonline.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.android.material.tabs.TabLayoutMediator
 import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.FragmentHomeBinding
 import com.mrz.saskonline.ui.home.adapter.FragmentAdapter
 import com.mrz.saskonline.ui.core.BaseFragment
+import com.mrz.saskonline.ui.home.homework.HomeworkFragment
+import com.mrz.saskonline.ui.home.timetable.TimetableFragment
+import com.mrz.saskonline.ui.home.weather.WeatherFragment
 import com.mrz.saskonline.viewmodel.home.HomeViewModel
 
 class HomeFragment :
@@ -38,24 +39,16 @@ class HomeFragment :
     private fun setupTabLayoutAndPager() {
         with(binding) {
             val adapter = FragmentAdapter(parentFragmentManager, lifecycle)
+
+            adapter.addFragment(TimetableFragment(), getString(R.string.tab_timetable))
+            adapter.addFragment(HomeworkFragment(), getString(R.string.tab_homework))
+            adapter.addFragment(WeatherFragment(), getString(R.string.tab_weather))
+
             pager.adapter = adapter
+            TabLayoutMediator(tabLayout, pager) { tab, position ->
+                tab.text = adapter.getPageTitle(position)
+            }.attach()
 
-            tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    if (tab != null) {
-                        pager.currentItem = tab.position
-                    }
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab?) {}
-                override fun onTabReselected(tab: TabLayout.Tab?) {}
-            })
-
-            pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    tabLayout.selectTab(tabLayout.getTabAt(position))
-                }
-            })
         }
     }
 }
