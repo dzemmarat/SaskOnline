@@ -4,11 +4,9 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.mrz.saskonline.R
+import com.mrz.saskonline.app.core.Util
 import com.mrz.saskonline.data.models.Weather
 import com.mrz.saskonline.databinding.ItemHourlyWeatherBinding
-import com.mrz.saskonline.extensions.getCurrentDay
-import com.mrz.saskonline.extensions.getCurrentHourWithNull
-import com.mrz.saskonline.extensions.getCurrentMonth
 import com.mrz.saskonline.ui.core.BaseAdapterDelegate
 
 class WeatherDelegate(
@@ -30,7 +28,7 @@ class WeatherDelegate(
     ) : ViewHolder(binding.root) {
         fun bind(item: Weather) {
             binding.containerWeather.isEnabled =
-                getCurrentHourWithNull() == item.time && item.date == "${getCurrentDay()} ${getCurrentMonth()}"
+                Util().getCurrentHourWithNull() == item.time && item.date == "${Util().getCurrentDay()} ${Util().getCurrentMonth()}"
             binding.tvItemTime.text = item.time
             binding.tvWeatherHourlyTemperature.text =
                 activity.getString(R.string.weather_degrees, item.degrees.toString())

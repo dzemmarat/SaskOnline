@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.mrz.saskonline.R
+import com.mrz.saskonline.app.core.Util
+import com.mrz.saskonline.data.models.Weather
 import com.mrz.saskonline.databinding.FragmentWeatherBinding
-import com.mrz.saskonline.extensions.getCurrentDay
-import com.mrz.saskonline.extensions.getCurrentMonth
 import com.mrz.saskonline.extensions.gone
 import com.mrz.saskonline.ui.core.BaseFragment
 import com.mrz.saskonline.ui.core.DelegationAdapter
@@ -69,10 +69,14 @@ class WeatherFragment : BaseFragment<HomeViewModel, FragmentWeatherBinding>() {
             viewModel.weatherList.collect { weather ->
                 weatherAdapter.items = weather.filter {
                     it.date == if (viewModel.isTodayWeather) {
-                        "${getCurrentDay()} ${getCurrentMonth()}"
+                        "${Util().getCurrentDay()} ${Util().getCurrentMonth()}"
                     } else {
-                        "${getCurrentDay() + 1} ${getCurrentMonth()}"
+                        "${Util().getCurrentDay() + 1} ${Util().getCurrentMonth()}"
                     }
+                }
+
+                if (viewModel.isTodayWeather) {
+                    binding.rvHourlyWeather.scrollToPosition(Util().getCurrentHour().toInt() - 1)
                 }
             }
         }
