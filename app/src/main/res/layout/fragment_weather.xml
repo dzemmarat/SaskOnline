@@ -5,12 +5,134 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weatherHeader"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginEnd="@dimen/margin_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:background="@drawable/bg_weather"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeatherTitle"
+            style="@style/Text.WeatherTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_title_weather_top"
+            android:layout_marginEnd="@dimen/margin_title_weather_end"
+            android:text="@string/weather_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeatherTemperatureNull"
+            style="@style/Text.WeatherTemperatureNull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:text="o"
+            app:layout_constraintEnd_toEndOf="@+id/tvWeatherTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvWeatherTitle"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvWeatherTemperature"
+            style="@style/Text.WeatherTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeatherTemperatureNull"
+            app:layout_constraintTop_toTopOf="@+id/tvWeatherTitle"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="183dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:src="@drawable/ic_weather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWeatherTitle"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:padding="3dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="@+id/weatherHeader"
+        app:layout_constraintTop_toTopOf="@+id/tabLayout"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        style="@style/TabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/margin_weather_tabs_top"
+        app:layout_constraintStart_toStartOf="@+id/weatherHeader"
+        app:layout_constraintTop_toBottomOf="@+id/weatherHeader"
+        app:tabGravity="start"
+        app:tabIndicatorColor="?attr/colorPrimary"
+        app:tabMode="fixed"
+        app:tabPaddingEnd="24dp"
+        app:tabPaddingStart="0dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/Text.TabLayout"
+        app:tabTextColor="@color/gray"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_today" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_tomorrow" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHourlyWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_weather_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_hourly_weather" />
+
+    <include
+        android:id="@+id/containerImportant"
+        layout="@layout/layout_important_container"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginEnd="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/margin_weather_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvHourlyWeather"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

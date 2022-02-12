@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/containerImportant"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_important_container"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/padding_container_important_horizontal"
+    android:paddingTop="@dimen/padding_container_important_top"
+    android:paddingEnd="@dimen/padding_container_important_horizontal"
+    android:paddingBottom="@dimen/padding_container_important_bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvAnonsTitle"
+        style="@style/Text.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Важная информация"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tvAnonsDescription"
+        style="@style/Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Все документы по стипендии отдавать в 204 кабинет"
+        tools:visibility="visible" />
+
+</LinearLayout>

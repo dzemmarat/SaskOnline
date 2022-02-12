@@ -21,4 +21,14 @@
     <!-- Homework Fragment -->
     <dimen name="margin_item_homework_image_start">21dp</dimen>
     <dimen name="margin_item_homework_image">18dp</dimen>
+
+    <!-- Weather Fragment -->
+    <dimen name="margin_title_weather_top">18dp</dimen>
+    <dimen name="margin_title_weather_end">24dp</dimen>
+    <dimen name="margin_weather_tabs_top">24dp</dimen>
+    <dimen name="margin_weather_recycler">24dp</dimen>
+    <dimen name="margin_item_image">16dp</dimen>
+    <dimen name="margin_item_temperature">20dp</dimen>
+    <dimen name="margin_item_vertical">16dp</dimen>
+
 </resources>

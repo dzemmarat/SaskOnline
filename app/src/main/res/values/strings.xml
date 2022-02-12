@@ -22,4 +22,11 @@
     <!-- Schedule Fragment -->
     <string name="item_timetable_icon_description">Icon for lesson</string>
 
+    <!-- Weather Fragment -->
+    <string name="weather_text">Облачно</string>
+    <string name="tab_today">Сегодня</string>
+    <string name="tab_tomorrow">Завтра</string>
+    <string name="weather_degrees">\n%s°</string>
+    <string name="weather_message">Ожидается сильный ветер в 13:00</string>
+
 </resources>
