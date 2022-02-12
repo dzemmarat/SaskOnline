@@ -1,7 +1,6 @@
 package com.mrz.saskonline.ui.core
 
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.HasDefaultViewModelProviderFactory
 import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.viewbinding.ViewBinding
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mrz.saskonline.ui.MainActivity
 import com.mrz.saskonline.viewmodel.core.BaseViewModel
 import javax.inject.Inject
@@ -35,7 +33,12 @@ abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>(
 
     val mainActivity: MainActivity get() = requireActivity() as MainActivity
 
-    var isNavigationEnabled: Boolean = true
+     /**
+     * Переменная для указания видимости навигации. При значении false делает навигацию невидимой.
+     */
+    protected var isNavigationEnabled: Boolean = true
+
+    private var _title: String = "Главная"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,12 +53,18 @@ abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupNavigationBar()
         setupViews()
     }
 
-    private fun setupNavigationBar() {
+    override fun onStart() {
+        super.onStart()
+        setupNavigationBarVisibility()
+        mainActivity.setToolbarTitle(_title)
+    }
 
+    // Вызов только в onStart
+    private fun setupNavigationBarVisibility() {
+        mainActivity.setNavigationBarVisible(isNavigationEnabled)
     }
 
     override fun onDestroyView() {

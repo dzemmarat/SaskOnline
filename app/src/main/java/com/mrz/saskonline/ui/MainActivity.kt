@@ -7,6 +7,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.ActivityMainBinding
+import com.mrz.saskonline.extensions.gone
+import com.mrz.saskonline.extensions.visible
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,18 @@ class MainActivity : AppCompatActivity() {
         // Инициализация NavHostFragment
         navController = findNavController(R.id.fragmentContainerView)
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        // Отключаем обновление фрагмента при выборе той же вкладки
+        binding.bottomNavigationView.setOnNavigationItemReselectedListener {  }
+    }
+
+    // Функция для вызова из фрагментов
+    fun setNavigationBarVisible(isVisible: Boolean) {
+        if (isVisible) {
+            binding.bottomNavigationView.visible()
+        } else {
+            binding.bottomNavigationView.gone()
+        }
     }
 
 }
