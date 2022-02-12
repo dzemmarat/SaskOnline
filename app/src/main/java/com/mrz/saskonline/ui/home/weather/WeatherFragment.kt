@@ -3,12 +3,25 @@ package com.mrz.saskonline.ui.home.weather
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.FragmentWeatherBinding
+import com.mrz.saskonline.extensions.getCurrentDay
+import com.mrz.saskonline.extensions.getCurrentMonth
+import com.mrz.saskonline.extensions.gone
 import com.mrz.saskonline.ui.core.BaseFragment
-import com.mrz.saskonline.viewmodel.core.EmptyViewModel
+import com.mrz.saskonline.ui.core.DelegationAdapter
+import com.mrz.saskonline.ui.home.weather.adapter.WeatherDelegate
+import com.mrz.saskonline.viewmodel.home.HomeViewModel
+import kotlinx.coroutines.flow.collect
 
-class WeatherFragment: BaseFragment<EmptyViewModel, FragmentWeatherBinding>() {
-    override val viewModel: EmptyViewModel by viewModels()
+class WeatherFragment : BaseFragment<HomeViewModel, FragmentWeatherBinding>() {
+
+    override val viewModel: HomeViewModel by viewModels()
+    private val weatherAdapter by lazy { DelegationAdapter() }
 
     override fun inflateViewBinding(
         inflater: LayoutInflater,
@@ -17,6 +30,52 @@ class WeatherFragment: BaseFragment<EmptyViewModel, FragmentWeatherBinding>() {
         FragmentWeatherBinding.inflate(layoutInflater, container, false)
 
     override fun setupViews() {
+        viewModel.createWeatherList()
+        setupRecyclerView()
+        setupTabLayout()
 
+        binding.containerImportant.tvAnonsTitle.text =
+            getString(R.string.weather_message)
+        binding.containerImportant.tvAnonsDescription.gone()
     }
+
+    private fun setupTabLayout() {
+        binding.tabLayout.addOnTabSelectedListener(object: OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if (tab != null) {
+                    viewModel.isTodayWeather = tab.position == 0
+                }
+                setupRecyclerViewItems()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
+    }
+
+    private fun setupRecyclerView() {
+        weatherAdapter.delegatesManager.addDelegate(
+            WeatherDelegate(requireActivity())
+        )
+        binding.rvHourlyWeather.apply {
+            adapter = weatherAdapter
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        }
+        setupRecyclerViewItems()
+    }
+
+    private fun setupRecyclerViewItems() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.weatherList.collect { weather ->
+                weatherAdapter.items = weather.filter {
+                    it.date == if (viewModel.isTodayWeather) {
+                        "${getCurrentDay()} ${getCurrentMonth()}"
+                    } else {
+                        "${getCurrentDay() + 1} ${getCurrentMonth()}"
+                    }
+                }
+            }
+        }
+    }
+
 }
