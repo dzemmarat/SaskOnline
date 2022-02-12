@@ -1,7 +1,5 @@
 package com.mrz.saskonline.ui.home
 
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -29,14 +27,15 @@ class HomeFragment :
         setTitle(getString(R.string.title_home))
         with(binding) {
             tvHeader.text = getString(R.string.hello_user, "Марат Джеманкулов")
-
-            Handler(Looper.getMainLooper()).postDelayed({
-                setupTabLayout()
-            }, 500)
         }
     }
 
-    private fun setupTabLayout() {
+    override fun onStart() {
+        super.onStart()
+        setupTabLayoutAndPager()
+    }
+
+    private fun setupTabLayoutAndPager() {
         with(binding) {
             val adapter = FragmentAdapter(parentFragmentManager, lifecycle)
             pager.adapter = adapter

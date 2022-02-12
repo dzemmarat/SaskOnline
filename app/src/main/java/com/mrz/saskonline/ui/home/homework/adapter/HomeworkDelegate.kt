@@ -21,13 +21,11 @@ class HomeworkDelegate : BaseAdapterDelegate() {
     inner class HomeworkViewHolder(
         private val binding: ItemHomeworkBinding
     ) : ViewHolder(binding.root) {
-
         fun bind(item: Lesson) {
             with(binding) {
                 tvLessonTitle.text = item.title
                 tvLessonDescription.text = item.description
             }
         }
-
     }
 }

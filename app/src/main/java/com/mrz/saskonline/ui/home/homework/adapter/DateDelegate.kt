@@ -21,12 +21,10 @@ class DateDelegate : BaseAdapterDelegate() {
     inner class HomeworkViewHolder(
         private val binding: ItemDateBinding
     ) : ViewHolder(binding.root) {
-
         fun bind(item: Date) {
             with(binding) {
                 tvDate.text = item.date
             }
         }
-
     }
 }
