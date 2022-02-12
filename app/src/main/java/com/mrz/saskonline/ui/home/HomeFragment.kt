@@ -26,6 +26,7 @@ class HomeFragment :
         FragmentHomeBinding.inflate(inflater, container, false)
 
     override fun setupViews() {
+        setTitle(getString(R.string.title_home))
         with(binding) {
             tvHeader.text = getString(R.string.hello_user, "Марат Джеманкулов")
 

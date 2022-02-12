@@ -67,6 +67,10 @@ abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>(
         mainActivity.setNavigationBarVisible(isNavigationEnabled)
     }
 
+    protected fun setTitle(title: String) {
+        _title = title
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

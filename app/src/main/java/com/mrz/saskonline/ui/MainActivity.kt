@@ -42,4 +42,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun setToolbarTitle(title: String) {
+        binding.tvToolbar.text = title
+    }
+
 }
