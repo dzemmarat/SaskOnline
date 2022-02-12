@@ -10,7 +10,6 @@ import com.mrz.saskonline.ui.core.BaseFragment
 import com.mrz.saskonline.ui.core.DelegationAdapter
 import com.mrz.saskonline.ui.home.homework.adapter.DateDelegate
 import com.mrz.saskonline.ui.home.homework.adapter.HomeworkDelegate
-import com.mrz.saskonline.viewmodel.core.EmptyViewModel
 import com.mrz.saskonline.viewmodel.home.HomeViewModel
 import kotlinx.coroutines.flow.collect
 
@@ -26,8 +25,10 @@ class HomeworkFragment : BaseFragment<HomeViewModel, FragmentTimetableBinding>()
         FragmentTimetableBinding.inflate(layoutInflater, container, false)
 
     override fun setupViews() {
-        viewModel.createTestElements()
+        // Создаем элементы для уроков
+        viewModel.createLessonsTestElements()
         viewModel.createListForHomework()
+
         setupRecyclerView()
     }
 

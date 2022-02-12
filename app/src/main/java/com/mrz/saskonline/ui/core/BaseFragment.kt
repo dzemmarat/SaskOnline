@@ -18,20 +18,25 @@ abstract class BaseFragment<T : BaseViewModel, VB : ViewBinding>(
     layout: Int
 ) : Fragment(layout), HasDefaultViewModelProviderFactory {
 
+    // Инжектим вью модель
     @Inject
     lateinit var defaultViewModelFactory: dagger.Lazy<SavedStateViewModelFactory>
 
+    // Возможность использования BaseFragment без лейаута
     constructor() : this(0)
 
+    // Переменная для вью модели
     protected abstract val viewModel: T
 
+    // Внутренняя переменная для биндинга
     private var _binding: VB? = null
-
     val binding get() = _binding!!
 
+    // Инициализация биндинга
     abstract fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 
-    val mainActivity: MainActivity get() = requireActivity() as MainActivity
+    // Переменная MainActivity для использования во фрагментах
+    protected val mainActivity: MainActivity get() = requireActivity() as MainActivity
 
      /**
      * Переменная для указания видимости навигации. При значении false делает навигацию невидимой.

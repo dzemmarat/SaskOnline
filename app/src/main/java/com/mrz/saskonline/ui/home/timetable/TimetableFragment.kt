@@ -24,12 +24,14 @@ class TimetableFragment : BaseFragment<HomeViewModel, FragmentHomeworkBinding>()
         FragmentHomeworkBinding.inflate(layoutInflater, container, false)
 
     override fun setupViews() {
-        viewModel.createTestElements()
+        // Создаем уроки для расписания
+        viewModel.createLessonsTestElements()
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
         homeworkAdapter.apply {
+            //  Добавляем обработку для расписания
             delegatesManager.addDelegate(
                 TimetableDelegate()
             )
