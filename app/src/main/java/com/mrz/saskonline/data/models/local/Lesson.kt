@@ -1,4 +1,4 @@
-package com.mrz.saskonline.data.models
+package com.mrz.saskonline.data.models.local
 
 data class Lesson(
     val image: Int,

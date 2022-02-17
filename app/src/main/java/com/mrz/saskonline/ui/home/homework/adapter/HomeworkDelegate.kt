@@ -2,7 +2,7 @@ package com.mrz.saskonline.ui.home.homework.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.mrz.saskonline.data.models.Lesson
+import com.mrz.saskonline.data.models.local.Lesson
 import com.mrz.saskonline.databinding.ItemHomeworkBinding
 import com.mrz.saskonline.ui.core.BaseAdapterDelegate
 

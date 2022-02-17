@@ -3,7 +3,7 @@ package com.mrz.saskonline.ui.home.timetable.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import coil.load
-import com.mrz.saskonline.data.models.Lesson
+import com.mrz.saskonline.data.models.local.Lesson
 import com.mrz.saskonline.databinding.ItemLessonBinding
 import com.mrz.saskonline.extensions.visible
 import com.mrz.saskonline.ui.core.BaseAdapterDelegate

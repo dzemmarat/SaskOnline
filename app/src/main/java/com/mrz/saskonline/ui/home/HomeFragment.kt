@@ -38,7 +38,7 @@ class HomeFragment :
 
     private fun setupTabLayoutAndPager() {
         with(binding) {
-            val adapter = FragmentAdapter(parentFragmentManager, lifecycle)
+            val adapter = FragmentAdapter(childFragmentManager, lifecycle)
 
             adapter.addFragment(TimetableFragment(), getString(R.string.tab_timetable))
             adapter.addFragment(HomeworkFragment(), getString(R.string.tab_homework))

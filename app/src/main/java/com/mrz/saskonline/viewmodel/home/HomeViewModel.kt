@@ -3,10 +3,12 @@ package com.mrz.saskonline.viewmodel.home
 import androidx.lifecycle.viewModelScope
 import com.mrz.saskonline.R
 import com.mrz.saskonline.app.core.Util
-import com.mrz.saskonline.data.models.Date
-import com.mrz.saskonline.data.models.Lesson
-import com.mrz.saskonline.data.models.Weather
+import com.mrz.saskonline.data.models.local.Date
+import com.mrz.saskonline.data.models.local.Lesson
+import com.mrz.saskonline.data.models.remote.requests.WeatherRequest
+import com.mrz.saskonline.data.models.remote.responses.WeatherResponse
 import com.mrz.saskonline.viewmodel.core.BaseViewModel
+import com.mrz.saskonline.viewmodel.core.Event
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
@@ -23,8 +25,8 @@ class HomeViewModel : BaseViewModel() {
     private val _homeworkList = MutableStateFlow<MutableList<Any>>(mutableListOf())
     val homeworkList: StateFlow<List<Any>> = _homeworkList
 
-    private val _weatherList = MutableStateFlow<MutableList<Weather>>(mutableListOf())
-    val weatherList: StateFlow<List<Weather>> = _weatherList
+    private val _weatherList = MutableStateFlow<Event<MutableList<WeatherResponse>>>(Event.loading())
+    val weatherList: StateFlow<Event<MutableList<WeatherResponse>>> = _weatherList
 
     var isTodayWeather: Boolean = true
 
@@ -76,6 +78,16 @@ class HomeViewModel : BaseViewModel() {
         }
     }
 
+    fun getWeatherList() {
+        requestWithMutableFlow(_weatherList) {
+            api.getUsers(
+                query = "Saratov",
+                appId = "a6b257b5e002cfceccff62f830c0a3b8",
+                cnt = 36
+            )
+        }
+    }
+
     private fun sortForRecycler(map: Map<String, List<Lesson>>) {
         for ((key, value) in map) {
             if (previousKey != key) {
@@ -89,28 +101,6 @@ class HomeViewModel : BaseViewModel() {
                     _homeworkList.value.add(it)
                 }
             }
-        }
-    }
-
-    fun createWeatherList() {
-        for (i in 0 until 24) {
-            _weatherList.value.add(
-                Weather(
-                    time = "$i:00",
-                    date = "${Util().getCurrentDay()} ${Util().getCurrentMonth()}",
-                    degrees = Random(i).nextInt(-7,10).toShort()
-                ),
-            )
-        }
-
-        for (i in 0 until 24) {
-            _weatherList.value.add(
-                Weather(
-                    time = "$i:00",
-                    date = "${Util().getCurrentDay() + 1} ${Util().getCurrentMonth()}",
-                    degrees = Random(i+24).nextInt(-8, 12).toShort()
-                )
-            )
         }
     }
 }
