@@ -78,7 +78,6 @@ class MessagesFragment :
                 messagesTeachersAdapter.items = it
             }
         }
-
     }
 
     private fun setupConversationsRecyclerView() {
@@ -96,6 +95,5 @@ class MessagesFragment :
                 conversationsAdapter.items = it
             }
         }
-
     }
 }

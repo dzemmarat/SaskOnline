@@ -28,8 +28,12 @@
     <string name="tab_tomorrow">Завтра</string>
     <string name="weather_degrees">\n%s°</string>
     <string name="weather_message">Ожидается сильный ветер в 13:00</string>
+
     <string name="title_messages_h1">Беседы</string>
     <string name="messages_title_h2_teachers">Беседы с преподавателями</string>
     <string name="messages_title_h2_private">Личные</string>
+
+    <string name="title_news_h1">Интересное</string>
+    <string name="title_news_h2">Новости</string>
 
 </resources>
