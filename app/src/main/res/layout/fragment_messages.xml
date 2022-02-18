@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvHeader"
+            style="@style/Text.Header"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_header_top"
+            android:layout_marginEnd="@dimen/margin_horizontal"
+            android:text="@string/title_messages_h1"
+            app:drawableEndCompat="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvConversations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_conversations" />
+
+        <TextView
+            android:id="@+id/tvTeachers"
+            style="@style/Text.18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/messages_title_h2_teachers"
+            app:drawableEndCompat="@drawable/ic_add"
+            app:layout_constraintTop_toBottomOf="@id/rvConversations" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTeachers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTeachers"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_message" />
+
+        <TextView
+            android:id="@+id/tvPrivate"
+            style="@style/Text.18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/messages_title_h2_private"
+            app:drawableEndCompat="@drawable/ic_add"
+            app:layout_constraintTop_toBottomOf="@id/rvTeachers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPrivate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPrivate"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_message" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

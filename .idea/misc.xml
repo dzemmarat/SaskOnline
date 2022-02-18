@@ -9,6 +9,8 @@
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_hourly_weather.xml" value="0.1388157894736842" />
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_icon_schedule_item.xml" value="0.2546052631578947" />
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_important_container.xml" value="0.2546052631578947" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_item_conversation.xml" value="0.24572368421052632" />
+        <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_message_logo.xml" value="0.24572368421052632" />
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_notes_view.xml" value="0.24572368421052632" />
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_tab_item.xml" value="0.2546052631578947" />
         <entry key="..\:/SaskOnline/app/src/main/res/drawable/bg_tab_item_selected.xml" value="0.1394736842105263" />
@@ -28,18 +30,23 @@
         <entry key="..\:/SaskOnline/app/src/main/res/layout/activity_main.xml" value="0.2444078947368421" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_home.xml" value="0.16" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_homework.xml" value="0.23055555555555557" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_messages.xml" value="0.2355263157894737" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_news.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_notes.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_schedule.xml" value="0.2444078947368421" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_timetable.xml" value="0.2444078947368421" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/fragment_weather.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/homework_fragment.xml" value="0.2444078947368421" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/item_conversations.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_date.xml" value="0.2444078947368421" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_date_notes.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_homework.xml" value="0.2444078947368421" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_hourly_weather.xml" value="0.25" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_lesson.xml" value="0.24201954397394138" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/item_message.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_note.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/item_schedule.xml" value="0.2444078947368421" />
+        <entry key="..\:/SaskOnline/app/src/main/res/layout/item_teachers_message.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/layout/layout_important_container.xml" value="0.2355263157894737" />
         <entry key="..\:/SaskOnline/app/src/main/res/menu/menu_bottom.xml" value="0.2355263157894737" />
       </map>
