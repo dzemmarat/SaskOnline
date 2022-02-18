@@ -18,12 +18,11 @@
         android:layout_marginEnd="20dp"
         android:drawablePadding="16dp"/>
 
-    <ImageView
-        android:layerType="software"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:src="@drawable/line_dash"
-        android:layout_marginEnd="20dp"
-        android:layout_gravity="center_vertical"/>
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="20dp"/>
 
 </LinearLayout>
