@@ -10,6 +10,7 @@ import com.mrz.saskonline.R
 import com.mrz.saskonline.databinding.FragmentNewsBinding
 import com.mrz.saskonline.ui.core.BaseFragment
 import com.mrz.saskonline.ui.core.DelegationAdapter
+import com.mrz.saskonline.ui.news.adapter.NewsDelegate
 import com.mrz.saskonline.ui.news.adapter.NewsHeaderDelegate
 import com.mrz.saskonline.viewmodel.news.NewsViewModel
 import kotlinx.coroutines.flow.collect
@@ -33,7 +34,10 @@ class NewsFragment:
             resources.getDrawable(R.drawable.ic_world_skills),
             resources.getDrawable(R.drawable.ic_masters)
         ))
-        viewModel.s
+        viewModel.setupNews(listOf(
+            resources.getDrawable(R.drawable.ic_news_2),
+            resources.getDrawable(R.drawable.ic_news_1)
+        ))
         setTitle(getString(R.string.title_news))
         setupNewsHeaderAdapter()
         setupNewsAdapter()
@@ -56,15 +60,19 @@ class NewsFragment:
 
     private fun setupNewsAdapter() {
         newsAdapter.delegatesManager.apply {
-            addDelegate(NewsHeaderDelegate())
+            addDelegate(NewsDelegate())
         }
         binding.rvNews.apply {
             adapter = newsAdapter
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = object : LinearLayoutManager(context) {
+                override fun canScrollVertically(): Boolean {
+                    return false
+                }
+            }
         }
         lifecycleScope.launchWhenStarted {
             viewModel.news.collect {
-                newsHeaderAdapter.items = it
+                newsAdapter.items = it
             }
         }
     }

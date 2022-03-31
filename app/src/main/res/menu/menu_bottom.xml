@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/newsFragment"
-        android:icon="@drawable/ic_news"
+        android:icon="@drawable/ic_news_2"
         android:title="@string/title_news" />
 
     <item
